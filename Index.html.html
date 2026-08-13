@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Delivery Verification</title>
+<style>
+body{font-family:Arial,sans-serif;background:#f5f7fa;display:flex;justify-content:center;align-items:center;min-height:100vh;margin:0}
+.card{background:white;padding:32px;border-radius:16px;box-shadow:0 8px 30px rgba(0,0,0,.1);width:min(90%,380px);text-align:center}
+input{width:100%;box-sizing:border-box;padding:14px;margin:16px 0;border:1px solid #ccc;border-radius:8px;font-size:16px}
+button{width:100%;padding:14px;border:0;border-radius:8px;background:#111;color:white;font-size:16px;cursor:pointer}
+#result{margin-top:20px;font-weight:bold}
+</style>
+</head>
+<body>
+<div class="card">
+<h2>Delivery Verification</h2>
+<p>Enter your delivery verification code</p>
+<input id="code" type="text" inputmode="numeric" placeholder="Enter code">
+<button onclick="verify()">Verify Code</button>
+<div id="result"></div>
+</div>
+<script>
+function verify(){
+  const code=document.getElementById("code").value.trim();
+  const result=document.getElementById("result");
+  if(code==="994565"){
+    result.textContent="Delivery verification code approved";
+    result.style.color="green";
+  }else{
+    result.textContent="Invalid verification code";
+    result.style.color="red";
+  }
+}
+</script>
+</body>
+</html>
